@@ -9,7 +9,7 @@ body {
 }
 
 .pageOne {
-	height: 100vh;
+	min-height: 100vh;
 	background: linear-gradient(
 		90deg,
 		rgba(2, 0, 36, 1) 0%,
@@ -18,29 +18,33 @@ body {
 	);
 }
 
-.nav {
+.navbox {
 	position: fixed;
+	width: 100%;
 	height: 100px;
 	color: white;
-	font-size: 30px;
+	font-size: 40px;
 	letter-spacing: 2px;
-	padding: 20px;
+	padding: 40px;
 	font-family: 'Montserrat', sans-serif;
 }
 
-.navbox {
+.nav {
+	position: relative;
 	display: flex;
-	width: 100%;
-	justify-content: space-around;
+	justify-content: space-between;
+	z-index: 1;
 }
 
 .logo {
-	font-weight: bold;
-	font-size: 36px;
+	background-image: url('/img/91675ff1b24f3259251e5a9fb926a00e.png');
+	background-size: cover;
+	width: 300px;
+	height: 100px;
 }
 
 ul li {
-	margin: 40px;
+	margin: 50px;
 	display: inline;
 }
 
@@ -49,6 +53,7 @@ li {
 }
 
 li:hover {
+	background-color: #fff;
 	color: black;
 	cursor: pointer;
 }
@@ -65,10 +70,13 @@ li:hover {
 	background-color: none;
 	border: 2px solid white;
 	border-radius: 50%;
+	transition: transform 0.3s;
 }
 
-.wrapper:hover {
+.wrapper:hover,
+.arrow:hover {
 	cursor: pointer;
+	transform: scale(1.25);
 }
 
 .arrow {
@@ -78,4 +86,17 @@ li:hover {
 .cardarea {
 	height: 100vh;
 	background-color: #fff;
+}
+
+.arrow {
+	font-size: 40px;
+	transition: transform 0.3s;
+}
+
+.shadow {
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	height: 100%;
+	z-index: -1;
 }
